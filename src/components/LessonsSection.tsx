@@ -1,22 +1,21 @@
-
 import { Play } from "lucide-react";
 
 export const LessonsSection = () => {
   const lessons = [
     {
-      title: "Aula 1: Mindset Empreendedor",
+      title: "Aula 1 – O Despertar da Nova Mulher Empreendedora",
       description: "Descubra como desenvolver a mentalidade certa para empreender com confiança e determinação.",
-      duration: "25 min"
+      duration: "10 min"
     },
     {
-      title: "Aula 2: Identificando Oportunidades",
+      title: "Aula 2 – Mentalidade: O Que Separa Quem Fatura de Quem Desiste",
       description: "Aprenda a reconhecer e validar oportunidades de negócio no seu nicho de mercado.",
-      duration: "30 min"
+      duration: "12 min"
     },
     {
-      title: "Aula 3: Primeiros Passos",
+      title: "Aula 3 – O Mapa de Ação Para Começar do Zero Ainda Hoje",
       description: "Um guia prático para tirar sua ideia do papel e começar a empreender do zero.",
-      duration: "35 min"
+      duration: "15 min"
     }
   ];
 
