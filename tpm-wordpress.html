@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPM - Treinamento para Mulheres | Minicurso Gratuito</title>
+    <meta name="description" content="Minicurso gratuito TPM - Treinamento para Mulheres. Transforme sua realidade com o empreendedorismo feminino.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6B0F1A 0%, #4A0B12 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Header */
+        .header {
+            background: #4A0B12;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            color: #F4E4AA;
+            font-size: 1rem;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            background: linear-gradient(to bottom, #4A0B12, #6B0F1A);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .welcome-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .welcome-section .subtitle {
+            font-size: 1.25rem;
+            color: #F4E4AA;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .welcome-card {
+            background: rgba(139, 30, 63, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin: 0 1rem;
+        }
+        
+        .welcome-card p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+        
+        .divider {
+            width: 6rem;
+            height: 4px;
+            background: linear-gradient(to right, #D4AF37, #F4E4AA);
+            border-radius: 2px;
+            margin: 2rem auto 0;
+        }
+        
+        /* Lessons Section */
+        .lessons-section {
+            background: #6B0F1A;
+            padding: 3rem 0;
+        }
+        
+        .lessons-section h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #D4AF37;
+        }
+        
+        .lesson-card {
+            background: rgba(139, 30, 63, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lesson-card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: scale(1.02);
+        }
+        
+        .lesson-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .video-placeholder {
+            flex-shrink: 0;
+            width: 16rem;
+            height: 9rem;
+            background: #4A0B12;
+            border-radius: 0.75rem;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .video-placeholder:hover {
+            background: rgba(74, 11, 18, 0.8);
+        }
+        
+        .play-button {
+            width: 3rem;
+            height: 3rem;
+            color: #D4AF37;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+        
+        .lesson-info {
+            flex: 1;
+        }
+        
+        .lesson-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .lesson-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.3;
+        }
+        
+        .duration-badge {
+            background: #D4AF37;
+            color: #6B0F1A;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+        }
+        
+        .lesson-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(to bottom, #6B0F1A, #4A0B12);
+            padding: 4rem 0;
+        }
+        
+        .cta-card {
+            background: rgba(139, 30, 63, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            margin: 0 1rem;
+        }
+        
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .star {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #D4AF37;
+            fill: currentColor;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: #F4E4AA;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .benefits {
+            margin-bottom: 2.5rem;
+        }
+        
+        .benefit {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .cta-button {
+            background: linear-gradient(to right, #D4AF37, #F4E4AA);
+            color: #6B0F1A;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 1.25rem 3rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(to right, #F4E4AA, #D4AF37);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+        }
+        
+        .arrow-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover .arrow-icon {
+            transform: translateX(0.25rem);
+        }
+        
+        .cta-footer {
+            color: rgba(244, 228, 170, 0.8);
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #4A0B12;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #D4AF37;
+            color: #6B0F1A;
+            transform: scale(1.1);
+        }
+        
+        .social-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        .footer-divider {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-tagline {
+            color: rgba(244, 228, 170, 0.8);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .welcome-section h2 {
+                font-size: 1.75rem;
+            }
+            
+            .welcome-section .subtitle {
+                font-size: 1rem;
+            }
+            
+            .welcome-card {
+                padding: 1.5rem;
+                margin: 0 0.5rem;
+            }
+            
+            .lessons-section h3 {
+                font-size: 1.5rem;
+            }
+            
+            .lesson-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .video-placeholder {
+                width: 100%;
+                max-width: 20rem;
+            }
+            
+            .lesson-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .lesson-title {
+                font-size: 1.125rem;
+            }
+            
+            .cta-title {
+                font-size: 1.75rem;
+            }
+            
+            .cta-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+            
+            .cta-card {
+                padding: 2rem 1.5rem;
+                margin: 0 0.5rem;
+            }
+            
+            .footer h4 {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .welcome-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-title {
+                font-size: 1.5rem;
+            }
+            
+            .lesson-card {
+                padding: 1rem;
+            }
+            
+            .video-placeholder {
+                height: 7rem;
+            }
+            
+            .cta-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="font-playfair">Minicurso TPM</h1>
+            <p>Treinamento para Mulheres</p>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <h2 class="font-playfair">Bem-vinda ao Minicurso TPM</h2>
+            
+            <p class="subtitle">
+                Você está prestes a transformar sua realidade com o empreendedorismo feminino.
+            </p>
+            
+            <div class="welcome-card">
+                <p>
+                    Assista às aulas abaixo e prepare-se para dar o próximo passo em direção à sua independência financeira e realização pessoal.
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section class="lessons-section">
+        <div class="container">
+            <h3 class="font-playfair">Suas Aulas Gratuitas</h3>
+            
+            <div class="lesson-card">
+                <div class="lesson-content">
+                    <div class="video-placeholder">
+                        <svg class="play-button" fill="currentColor" viewBox="0 0 24 24">
+                            <polygon points="5,3 19,12 5,21"></polygon>
+                        </svg>
+                    </div>
+                    
+                    <div class="lesson-info">
+                        <div class="lesson-header">
+                            <h4 class="lesson-title font-playfair">
+                                Aula 1 – O Despertar da Nova Mulher Empreendedora
+                            </h4>
+                            <span class="duration-badge">10 min</span>
+                        </div>
+                        
+                        <p class="lesson-description">
+                            Descubra como desenvolver a mentalidade certa para empreender com confiança e determinação.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-content">
+                    <div class="video-placeholder">
+                        <svg class="play-button" fill="currentColor" viewBox="0 0 24 24">
+                            <polygon points="5,3 19,12 5,21"></polygon>
+                        </svg>
+                    </div>
+                    
+                    <div class="lesson-info">
+                        <div class="lesson-header">
+                            <h4 class="lesson-title font-playfair">
+                                Aula 2 – Mentalidade: O Que Separa Quem Fatura de Quem Desiste
+                            </h4>
+                            <span class="duration-badge">12 min</span>
+                        </div>
+                        
+                        <p class="lesson-description">
+                            Aprenda a reconhecer e validar oportunidades de negócio no seu nicho de mercado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-content">
+                    <div class="video-placeholder">
+                        <svg class="play-button" fill="currentColor" viewBox="0 0 24 24">
+                            <polygon points="5,3 19,12 5,21"></polygon>
+                        </svg>
+                    </div>
+                    
+                    <div class="lesson-info">
+                        <div class="lesson-header">
+                            <h4 class="lesson-title font-playfair">
+                                Aula 3 – O Mapa de Ação Para Começar do Zero Ainda Hoje
+                            </h4>
+                            <span class="duration-badge">15 min</span>
+                        </div>
+                        
+                        <p class="lesson-description">
+                            Um guia prático para tirar sua ideia do papel e começar a empreender do zero.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 24 24">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                </div>
+                
+                <h3 class="cta-title font-playfair">
+                    Gostou do conteúdo?
+                </h3>
+                
+                <p class="cta-subtitle">
+                    Avance para o treinamento completo TPM e transforme sua vida profissional.
+                </p>
+                
+                <div class="benefits">
+                    <p class="benefit">✨ Acesso vitalício ao curso completo</p>
+                    <p class="benefit">✨ Comunidade exclusiva de mulheres empreendedoras</p>
+                    <p class="benefit">✨ Suporte direto e mentoria personalizada</p>
+                </div>
+                
+                <button class="cta-button" onclick="window.open('#', '_blank')">
+                    <span>Quero entrar no TPM agora</span>
+                    <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path>
+                    </svg>
+                </button>
+                
+                <p class="cta-footer">
+                    Sua jornada de transformação começa aqui
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h4 class="font-playfair">Siga-nos e mantenha-se conectada</h4>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="m16 11.37-.5-.5a5 5 0 0 0-7.07 0l-.5.5a5 5 0 0 0 0 7.07l1.79 1.79a5 5 0 0 0 7.07 0l1.79-1.79a3 3 0 0 0 0-4.24z"></path>
+                        <path d="m7 17 5-5 5 5"></path>
+                        <path d="m7 7 5 5 5-5"></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="footer-divider">
+                <p class="footer-text">
+                    © 2024 TPM - Treinamento para Mulheres. Todos os direitos reservados.
+                </p>
+                <p class="footer-tagline">
+                    Transformando vidas através do empreendedorismo feminino
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
