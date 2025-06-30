@@ -6,19 +6,26 @@ export const LessonsSection = () => {
     {
       title: "Aula 1 – O Despertar da Nova Mulher Empreendedora",
       description: "Descubra como desenvolver a mentalidade certa para empreender com confiança e determinação.",
-      duration: "10 min"
+      duration: "2 min",
+      videoUrl: "https://youtu.be/SHTCLKXjQYM?si=7qkBKdcdZZJDtKeL"
     },
     {
       title: "Aula 2 – Mentalidade: O Que Separa Quem Fatura de Quem Desiste",
       description: "Aprenda a reconhecer e validar oportunidades de negócio no seu nicho de mercado.",
-      duration: "12 min"
+      duration: "3 min",
+      videoUrl: "https://youtu.be/BZBfeBqsE_s?si=dhdok9f65KZ7QdIP"
     },
     {
       title: "Aula 3 – O Mapa de Ação Para Começar do Zero Ainda Hoje",
       description: "Um guia prático para tirar sua ideia do papel e começar a empreender do zero.",
-      duration: "15 min"
+      duration: "4 min",
+      videoUrl: "https://www.youtube.com/watch?v=XREIsRTLSpE"
     }
   ];
+
+  const handleVideoClick = (videoUrl: string) => {
+    window.open(videoUrl, '_blank');
+  };
 
   return (
     <section className="py-12 md:py-16 px-4 bg-wine">
@@ -35,7 +42,10 @@ export const LessonsSection = () => {
             >
               <div className="flex flex-col lg:flex-row items-center gap-4 md:gap-6 lg:gap-8">
                 <div className="flex-shrink-0 w-full lg:w-auto">
-                  <div className="w-full max-w-sm lg:w-64 h-32 md:h-36 lg:h-40 bg-wine-dark rounded-xl border-2 border-gold/50 flex items-center justify-center group cursor-pointer hover:bg-wine-dark/80 transition-colors mx-auto">
+                  <div 
+                    className="w-full max-w-sm lg:w-64 h-32 md:h-36 lg:h-40 bg-wine-dark rounded-xl border-2 border-gold/50 flex items-center justify-center group cursor-pointer hover:bg-wine-dark/80 transition-colors mx-auto"
+                    onClick={() => handleVideoClick(lesson.videoUrl)}
+                  >
                     <Play className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-gold group-hover:scale-110 transition-transform" fill="currentColor" />
                   </div>
                 </div>
